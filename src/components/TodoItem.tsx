@@ -1,5 +1,6 @@
 import React, {FC, MouseEvent, useContext} from "react";
 import { storeContext } from "../Store";
+import { Todo } from "../types";
 
 
 const TodoItem:FC<{todo:Todo}> = ({todo}) => {
@@ -7,7 +8,7 @@ const TodoItem:FC<{todo:Todo}> = ({todo}) => {
     const {state, dispatch} = useContext(storeContext);
     const handleDelete = (e:MouseEvent) => {
         console.log("delete component", todo.id)
-        dispatch({type:'DELETETODO', payload:{id:todo.id}})
+        dispatch({type:'DELETETODOS', payload:{id:todo.id}})
     }
 
     return (

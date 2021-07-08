@@ -2,13 +2,14 @@ import React, { useContext, useEffect } from "react";
 import { storeContext } from "../Store";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
+import{Tag} from '../types'
 
 const TodoList = () => {
 
     const {state, dispatch} = useContext(storeContext);
     console.log(state)
     useEffect(() => {
-        dispatch({type:'FETCHTODOS'})
+        dispatch({type:'FETCHTODOS', payload:{}})
     }, [])
 
     return(
