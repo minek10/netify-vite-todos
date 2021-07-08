@@ -20,7 +20,7 @@ const TodoForm : FC= () => {
     const handleClick= (e:MouseEvent) => {
         console.log('create todo')
         console.log(values)
-        dispatch({type:'ADDTODOS', payload:{values}})
+        dispatch({type:'ADDTODO', payload:{values}})
         setValues({title:'', tagId:1})
     }
 

@@ -27,12 +27,12 @@ type Action =
 
 
 interface AddTodo{
-    type:'ADDTODOS',
+    type:'ADDTODO',
     payload:any
 }
 
 interface DeleteTodo{
-    type:'DELETETODOS',
+    type:'DELETETODO',
     payload:any
 }
 
