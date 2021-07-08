@@ -9,7 +9,7 @@
     "e2e:open": "cypress open",
     "e2e:run": "cypress run",
     "test":"start-server-and-test yarn dev http://localhost:8000 e2e:open",
-    "deploy:back:" :"git subtree push --prefix server heroku master"
+    "deploy:back" :"git subtree push --prefix server heroku master"
   },
   "dependencies": {
     "react": "^17.0.0",
