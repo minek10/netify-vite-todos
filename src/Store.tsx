@@ -36,7 +36,7 @@ const asyncActionHandler:any={
                 headers:baseHeaders
             }
             try{
-                const response = await fetch('http://localhost:8000/tags', fetchSettings)
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/tags`, fetchSettings)
                 const tags = await response.json();
                 dispatch({type:'SET_TAGS', payload:tags})
                 console.log(tags)
@@ -51,7 +51,7 @@ const asyncActionHandler:any={
             headers:baseHeaders
         }
         try{
-            const response = await fetch('http://localhost:8000/todos?_expand=tag', fetchSettings)
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todos?_expand=tag`, fetchSettings)
             const todos = await response.json();
             dispatch({type:'SET_TODOS', payload:todos})
             console.log(todos)
@@ -68,7 +68,7 @@ const asyncActionHandler:any={
             body:JSON.stringify(action.payload.values)
         }
         try{
-            const response = await fetch('http://localhost:8000/todos?_expand=tag', fetchSettings)
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todos?_expand=tag`, fetchSettings)
             if(!response.ok){
                 console.log('error')
             }else{
@@ -77,7 +77,7 @@ const asyncActionHandler:any={
                         method:'GET',
                         headers:baseHeaders
                     }
-                    const response = await fetch('http://localhost:8000/todos?_expand=tag', fetchSettings)
+                    const response = await fetch(`${import.meta.env.VITE_API_URL}/todos?_expand=tag`, fetchSettings)
                     const todos = await response.json();
                     dispatch({type:'SET_TODOS', payload:todos})
                     console.log(todos)
@@ -100,7 +100,7 @@ const asyncActionHandler:any={
             headers:baseHeaders,
         }
         try{
-            const response = await fetch(`http://localhost:8000/todos/${action.payload.id}`, fetchSettings)
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/todos/${action.payload.id}`, fetchSettings)
             if(!response.ok){
                 console.log('error')
             }else{
@@ -109,7 +109,7 @@ const asyncActionHandler:any={
                         method:'GET',
                         headers:baseHeaders
                     }
-                    const response = await fetch('http://localhost:8000/todos?_expand=tag', fetchSettings)
+                    const response = await fetch(`${import.meta.env.VITE_API_URL}/todos?_expand=tag`, fetchSettings)
                     const todos = await response.json();
                     dispatch({type:'SET_TODOS', payload:todos})
                     console.log(todos)
